@@ -1,8 +1,6 @@
 import { lazy, LazyExoticComponent } from 'react'
 
-const About = lazy(()=> import(/* webpackChunkName: "About" */'../01-lazyLoad/pages/About'))
-const Home = lazy(()=> import(/* webpackChunkName: "Home" */'../01-lazyLoad/pages/Home'))
-const Users = lazy(()=> import(/* webpackChunkName: "Users" */'../01-lazyLoad/pages/Users'))
+const LazyLayout = lazy(()=> import(/* webpackChunkName: "LazyLayout" */'../01-lazyLoad/Layout/LazyLayout'))
 
 type JSXComponent= ()=> JSX.Element
 
@@ -16,18 +14,8 @@ interface Route{
 
 export const routes: Route[] = [
   {
-    path: '/about',
-    Component: About,
-    name: 'About'
+    path: '/lazy-layout',
+    Component: LazyLayout,
+    name: 'LazyLayout'
   },
-  {
-    path: '/home',
-    Component: Home,
-    name: 'Home'
-  },
-  {
-    path: '/users',
-    Component: Users,
-    name: 'Users'
-  }
 ]
